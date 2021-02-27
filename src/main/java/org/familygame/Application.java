@@ -24,7 +24,7 @@ public class Application {
      */
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        List<Player> players = setPlayers();
+        List<Player> players = readPlayerConfig();
 
         System.out.println("Starting game...");
 
@@ -40,7 +40,7 @@ public class Application {
      * read players configuration from console
      * @return
      */
-    private static List<Player> setPlayers() {
+    private static List<Player> readPlayerConfig() {
 
         System.out.println("You can enter the actual amount players.");
 
@@ -66,6 +66,10 @@ public class Application {
         return players;
     }
 
+    /**
+     * generates Http Client for injecting on required services.
+     * @return
+     */
     private static HttpClient getHttpClient(){
         return  HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_1_1)

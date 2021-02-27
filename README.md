@@ -8,6 +8,9 @@ After setting player count and player names, automatically applys game rules
 on each player, rolls dices in turns, and according ro rules calculates scores,
 final user which gets to score 25 wons the game. 
 
+Note: After first 6, If user rolls 4 then wont get negative point, but will go back to not started state,
+but after started state, if user rolls 4's then it can go to negative values, as it is not specified in rules.
+
 Rules:
 The rules of the game are:
 ● There is amaximum of 4players.
