@@ -7,10 +7,12 @@ import java.util.Properties;
 public class ConfigurationReader {
 
     Properties appProps;
+    private static final String PROPERTIES_FILE="application.properties";
+    private static final String EMPTY_STRING="";
 
     public ConfigurationReader() throws IOException {
-        String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-        String appConfigPath = rootPath + "application.properties";
+        String rootPath = Thread.currentThread().getContextClassLoader().getResource(EMPTY_STRING).getPath();
+        String appConfigPath = rootPath + PROPERTIES_FILE;
         appProps = new Properties();
         try (FileInputStream fileInputStream = new FileInputStream(appConfigPath)) {
             appProps.load(fileInputStream);
